@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+
+<body>
+    <div class=container>
+        <div class="row ">
+            <div class="col-12 bg-light mt-5">
+                <h1 class=" display text-secondary d-flex justify-content-center ">
+                    The New and Fancy Excuse Generator
+                </h1>
+            </div>
+        </div>
+        <div class=row >
+            <div class="col bg-light d-flex justify-content-center">
+                <h3 id="string">Click the button to generate a new excuse:</h3>
+            </div>
+        </div>
+        <div class=row>
+            <div class="col-12 d-flex justify-content-end bg-light">
+                <button onclick="excuses()" type="button" class="btn btn-primary btn mb-2" >New Excuse</button>
+                <script>
+                    function excuses() {
+                        function blackbox() {
+                            // funcion to create random number from 0 to 9
+                            let a = Math.random();
+                            a = parseInt(a * 10);
+                            return a;
+                        }
+                        let a = blackbox(), b = blackbox(), c = blackbox(), aux, output;
+                        let who = ['The dog', 'My grandma', 'The turtle', 'My neighbor', "A traveling merchant", "The headmaster", "My friend", "Ricky Martin", "The 4 Geeks Academy's CEO", "The Queen of England"];
+                        let what = ['eat', 'pissed', 'crushed', 'broke', "bamboozled", "threw away", "mismatched", "pulped", "shredded", "burned"];
+                        let when = ["played Dwarf Fortress.", "untied the Gordian Knot.", 'solved the P versus NP problem.', 'had a nasty stomach ache.', 'when i wass swiming.', 'I had my lunch.', 'I had my mandatory coding time.', "I was walking my dog.", " I played Warhammer 40k.", "I assembled a lego pyramid."];
+                        //template of string
+                        aux = ["", "", "my homework while", ""];
+                        //asign random numbes to source arrays
+                        aux[0] = who[a];
+                        aux[1] = what[b];
+                        aux[3] = when[c];
+                        //array to string
+                        output = aux.join(" ");
+                        //change html.
+                        document.getElementById("string").innerHTML = output;
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
